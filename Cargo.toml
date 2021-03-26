@@ -1,0 +1,13 @@
+[package]
+name = "somethingsay"
+version = "0.1.0"
+authors = ["Mainforce"]
+edition = "2018"
+
+[dependencies]
+structopt = "0.3.21"
+colored = "2.0.0"
+failure = "0.1.8"
+exitfailure = "0.5.1"
+assert_cmd = "1.0.3"
+predicates = "1.0.7"
