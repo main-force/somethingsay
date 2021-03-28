@@ -25,12 +25,16 @@ fn main() -> Result<(), ExitFailure>{
     let options = Options::from_args();
     let mut message = String::new();
     
+    // If option 'stdin' is true, read message from stdin.
+    // Else, read the default message.
     if options.stdin {
         io::stdin().read_to_string(&mut message)?;
     } else {
         message = options.message;
     };
     
+    
+    // Print message ballon.
     let print_msg_with_ballon = |message: String| {        
         println!("          //");
         println!("         //");
@@ -48,7 +52,8 @@ fn main() -> Result<(), ExitFailure>{
         };
         
         
-    
+    // If user input the ascii image, use that.
+    // Else, use default.
     match &options.ascii_image {
         Some (path) => {
             let image = std::fs::read_to_string(path)
